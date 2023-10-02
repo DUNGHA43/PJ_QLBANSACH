@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Data" targetNamespace="http://tempuri.org/Data.xsd" xmlns:mstns="http://tempuri.org/Data.xsd" xmlns="http://tempuri.org/Data.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QL_BANSACHConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QL_BANSACHConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.GUI.Properties.Settings.GlobalReference.Default.QL_BANSACHConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="IN_HDTableAdapter" GeneratorDataComponentClassName="IN_HDTableAdapter" Name="IN_HD" UserDataComponentName="IN_HDTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QL_BANSACHConnectionString (Settings)" DbObjectName="QL_BANSACH.dbo.TblSach" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT TblSach.tenSach, SUM(TblCTHoaDon.soLuong), TblSach.giaBan, SUM(TblCTHoaDon.thanhTien)
+FROM TblCTHoaDon 
+INNER JOIN TblHoaDon ON TblCTHoaDon.maHD = TblHoaDon.maHD 
+INNER JOIN TblSach ON TblCTHoaDon.maSach = TblSach.maSach
+WHERE TblHoaDon.maHD = 'HD00001'
+GROUP BY tenSach, giaBan</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="tenSach" DataSetColumn="tenSach" />
+              <Mapping SourceColumn="giaBan" DataSetColumn="giaBan" />
+              <Mapping SourceColumn="Column1" DataSetColumn="Column1" />
+              <Mapping SourceColumn="Column2" DataSetColumn="Column2" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="IN_PNTableAdapter" GeneratorDataComponentClassName="IN_PNTableAdapter" Name="IN_PN" UserDataComponentName="IN_PNTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QL_BANSACHConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TblPhieuNhap.maPN, TblPhieuNhap.ngayNhap, TblNhaXuatBan.tenNXB, TblNhanVien.tenNV, TblPhieuNhap.tongTien
+FROM            TblPhieuNhap INNER JOIN
+                         TblNhaXuatBan ON TblNhaXuatBan.maNXB = TblPhieuNhap.maNXB INNER JOIN
+                         TblNhanVien ON TblNhanVien.maNV = TblPhieuNhap.maNV</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="maPN" DataSetColumn="maPN" />
+              <Mapping SourceColumn="ngayNhap" DataSetColumn="ngayNhap" />
+              <Mapping SourceColumn="tenNXB" DataSetColumn="tenNXB" />
+              <Mapping SourceColumn="tenNV" DataSetColumn="tenNV" />
+              <Mapping SourceColumn="tongTien" DataSetColumn="tongTien" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="INCTPNTableAdapter" GeneratorDataComponentClassName="INCTPNTableAdapter" Name="INCTPN" UserDataComponentName="INCTPNTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QL_BANSACHConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TblPhieuNhap.maPN, TblSach.tenSach, TblPhieuNhap.ngayNhap, TblCTPhieuNhap.soLuongNhap, TblSach.giaNhap, TblCTPhieuNhap.giaNhap AS Expr1, TblNhaXuatBan.tenNXB
+FROM            TblCTPhieuNhap INNER JOIN
+                         TblSach ON TblSach.maSach = TblCTPhieuNhap.maSach INNER JOIN
+                         TblPhieuNhap ON TblPhieuNhap.maPN = TblCTPhieuNhap.maPN INNER JOIN
+                         TblNhaXuatBan ON TblNhaXuatBan.maNXB = TblSach.maNXB AND TblNhaXuatBan.maNXB = TblPhieuNhap.maNXB</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="maPN" DataSetColumn="maPN" />
+              <Mapping SourceColumn="tenSach" DataSetColumn="tenSach" />
+              <Mapping SourceColumn="ngayNhap" DataSetColumn="ngayNhap" />
+              <Mapping SourceColumn="soLuongNhap" DataSetColumn="soLuongNhap" />
+              <Mapping SourceColumn="giaNhap" DataSetColumn="giaNhap" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="tenNXB" DataSetColumn="tenNXB" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="IN_TKHDTableAdapter" GeneratorDataComponentClassName="IN_TKHDTableAdapter" Name="IN_TKHD" UserDataComponentName="IN_TKHDTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QL_BANSACHConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TblHoaDon.maHD AS MÃ_HÓA_ĐƠN, TblHoaDon.ngayBan AS NGÀY_BÁN, TblNhanVien.tenNV AS NHÂN_VIÊN_LẬP, TblHoaDon.tongTien AS TỔNG_TIỀN
+FROM            TblHoaDon INNER JOIN
+                         TblNhanVien ON TblNhanVien.maNV = TblHoaDon.maNV</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MÃ_HÓA_ĐƠN" DataSetColumn="MÃ_HÓA_ĐƠN" />
+              <Mapping SourceColumn="NGÀY_BÁN" DataSetColumn="NGÀY_BÁN" />
+              <Mapping SourceColumn="NHÂN_VIÊN_LẬP" DataSetColumn="NHÂN_VIÊN_LẬP" />
+              <Mapping SourceColumn="TỔNG_TIỀN" DataSetColumn="TỔNG_TIỀN" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="IN_CTHDTableAdapter" GeneratorDataComponentClassName="IN_CTHDTableAdapter" Name="IN_CTHD" UserDataComponentName="IN_CTHDTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QL_BANSACHConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TblHoaDon.maHD, TblSach.tenSach AS TÊN_SÁCH, SUM(TblCTHoaDon.soLuong) AS SỐ_LƯỢNG, TblSach.giaBan AS GIÁ_BÁN, SUM(TblCTHoaDon.thanhTien) AS THÀNH_TIỀN
+FROM            TblCTHoaDon INNER JOIN
+                         TblSach ON TblSach.maSach = TblCTHoaDon.maSach INNER JOIN
+                         TblHoaDon ON TblHoaDon.maHD = TblCTHoaDon.maHD
+GROUP BY TblHoaDon.maHD, TblSach.tenSach, TblSach.giaBan</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="maHD" DataSetColumn="maHD" />
+              <Mapping SourceColumn="TÊN_SÁCH" DataSetColumn="TÊN_SÁCH" />
+              <Mapping SourceColumn="SỐ_LƯỢNG" DataSetColumn="SỐ_LƯỢNG" />
+              <Mapping SourceColumn="GIÁ_BÁN" DataSetColumn="GIÁ_BÁN" />
+              <Mapping SourceColumn="THÀNH_TIỀN" DataSetColumn="THÀNH_TIỀN" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Data" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Data" msprop:Generator_UserDSName="Data">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="IN_HD" msprop:Generator_TableClassName="IN_HDDataTable" msprop:Generator_TableVarName="tableIN_HD" msprop:Generator_TablePropName="IN_HD" msprop:Generator_RowDeletingName="IN_HDRowDeleting" msprop:Generator_RowChangingName="IN_HDRowChanging" msprop:Generator_RowEvHandlerName="IN_HDRowChangeEventHandler" msprop:Generator_RowDeletedName="IN_HDRowDeleted" msprop:Generator_UserTableName="IN_HD" msprop:Generator_RowChangedName="IN_HDRowChanged" msprop:Generator_RowEvArgName="IN_HDRowChangeEvent" msprop:Generator_RowClassName="IN_HDRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="tenSach" msprop:Generator_ColumnVarNameInTable="columntenSach" msprop:Generator_ColumnPropNameInRow="tenSach" msprop:Generator_ColumnPropNameInTable="tenSachColumn" msprop:Generator_UserColumnName="tenSach" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="giaBan" msprop:Generator_ColumnVarNameInTable="columngiaBan" msprop:Generator_ColumnPropNameInRow="giaBan" msprop:Generator_ColumnPropNameInTable="giaBanColumn" msprop:Generator_UserColumnName="giaBan" type="xs:int" minOccurs="0" />
+              <xs:element name="Column1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnColumn1" msprop:Generator_ColumnPropNameInRow="Column1" msprop:Generator_ColumnPropNameInTable="Column1Column" msprop:Generator_UserColumnName="Column1" type="xs:int" minOccurs="0" />
+              <xs:element name="Column2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnColumn2" msprop:Generator_ColumnPropNameInRow="Column2" msprop:Generator_ColumnPropNameInTable="Column2Column" msprop:Generator_UserColumnName="Column2" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="IN_PN" msprop:Generator_TableClassName="IN_PNDataTable" msprop:Generator_TableVarName="tableIN_PN" msprop:Generator_TablePropName="IN_PN" msprop:Generator_RowDeletingName="IN_PNRowDeleting" msprop:Generator_RowChangingName="IN_PNRowChanging" msprop:Generator_RowEvHandlerName="IN_PNRowChangeEventHandler" msprop:Generator_RowDeletedName="IN_PNRowDeleted" msprop:Generator_UserTableName="IN_PN" msprop:Generator_RowChangedName="IN_PNRowChanged" msprop:Generator_RowEvArgName="IN_PNRowChangeEvent" msprop:Generator_RowClassName="IN_PNRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="maPN" msprop:Generator_ColumnVarNameInTable="columnmaPN" msprop:Generator_ColumnPropNameInRow="maPN" msprop:Generator_ColumnPropNameInTable="maPNColumn" msprop:Generator_UserColumnName="maPN">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ngayNhap" msprop:Generator_ColumnVarNameInTable="columnngayNhap" msprop:Generator_ColumnPropNameInRow="ngayNhap" msprop:Generator_ColumnPropNameInTable="ngayNhapColumn" msprop:Generator_UserColumnName="ngayNhap" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="tenNXB" msprop:Generator_ColumnVarNameInTable="columntenNXB" msprop:Generator_ColumnPropNameInRow="tenNXB" msprop:Generator_ColumnPropNameInTable="tenNXBColumn" msprop:Generator_UserColumnName="tenNXB" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tenNV" msprop:Generator_ColumnVarNameInTable="columntenNV" msprop:Generator_ColumnPropNameInRow="tenNV" msprop:Generator_ColumnPropNameInTable="tenNVColumn" msprop:Generator_UserColumnName="tenNV" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tongTien" msprop:Generator_ColumnVarNameInTable="columntongTien" msprop:Generator_ColumnPropNameInRow="tongTien" msprop:Generator_ColumnPropNameInTable="tongTienColumn" msprop:Generator_UserColumnName="tongTien" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="INCTPN" msprop:Generator_TableClassName="INCTPNDataTable" msprop:Generator_TableVarName="tableINCTPN" msprop:Generator_TablePropName="INCTPN" msprop:Generator_RowDeletingName="INCTPNRowDeleting" msprop:Generator_RowChangingName="INCTPNRowChanging" msprop:Generator_RowEvHandlerName="INCTPNRowChangeEventHandler" msprop:Generator_RowDeletedName="INCTPNRowDeleted" msprop:Generator_UserTableName="INCTPN" msprop:Generator_RowChangedName="INCTPNRowChanged" msprop:Generator_RowEvArgName="INCTPNRowChangeEvent" msprop:Generator_RowClassName="INCTPNRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="maPN" msprop:Generator_ColumnVarNameInTable="columnmaPN" msprop:Generator_ColumnPropNameInRow="maPN" msprop:Generator_ColumnPropNameInTable="maPNColumn" msprop:Generator_UserColumnName="maPN">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tenSach" msprop:Generator_ColumnVarNameInTable="columntenSach" msprop:Generator_ColumnPropNameInRow="tenSach" msprop:Generator_ColumnPropNameInTable="tenSachColumn" msprop:Generator_UserColumnName="tenSach" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ngayNhap" msprop:Generator_ColumnVarNameInTable="columnngayNhap" msprop:Generator_ColumnPropNameInRow="ngayNhap" msprop:Generator_ColumnPropNameInTable="ngayNhapColumn" msprop:Generator_UserColumnName="ngayNhap" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="soLuongNhap" msprop:Generator_ColumnVarNameInTable="columnsoLuongNhap" msprop:Generator_ColumnPropNameInRow="soLuongNhap" msprop:Generator_ColumnPropNameInTable="soLuongNhapColumn" msprop:Generator_UserColumnName="soLuongNhap" type="xs:int" minOccurs="0" />
+              <xs:element name="giaNhap" msprop:Generator_ColumnVarNameInTable="columngiaNhap" msprop:Generator_ColumnPropNameInRow="giaNhap" msprop:Generator_ColumnPropNameInTable="giaNhapColumn" msprop:Generator_UserColumnName="giaNhap" type="xs:int" minOccurs="0" />
+              <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:long" minOccurs="0" />
+              <xs:element name="tenNXB" msprop:Generator_ColumnVarNameInTable="columntenNXB" msprop:Generator_ColumnPropNameInRow="tenNXB" msprop:Generator_ColumnPropNameInTable="tenNXBColumn" msprop:Generator_UserColumnName="tenNXB" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="IN_TKHD" msprop:Generator_TableClassName="IN_TKHDDataTable" msprop:Generator_TableVarName="tableIN_TKHD" msprop:Generator_RowChangedName="IN_TKHDRowChanged" msprop:Generator_TablePropName="IN_TKHD" msprop:Generator_RowDeletingName="IN_TKHDRowDeleting" msprop:Generator_RowChangingName="IN_TKHDRowChanging" msprop:Generator_RowEvHandlerName="IN_TKHDRowChangeEventHandler" msprop:Generator_RowDeletedName="IN_TKHDRowDeleted" msprop:Generator_RowClassName="IN_TKHDRow" msprop:Generator_UserTableName="IN_TKHD" msprop:Generator_RowEvArgName="IN_TKHDRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MÃ_HÓA_ĐƠN" msprop:Generator_ColumnVarNameInTable="columnMÃ_HÓA_ĐƠN" msprop:Generator_ColumnPropNameInRow="MÃ_HÓA_ĐƠN" msprop:Generator_ColumnPropNameInTable="MÃ_HÓA_ĐƠNColumn" msprop:Generator_UserColumnName="MÃ_HÓA_ĐƠN">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NGÀY_BÁN" msprop:Generator_ColumnVarNameInTable="columnNGÀY_BÁN" msprop:Generator_ColumnPropNameInRow="NGÀY_BÁN" msprop:Generator_ColumnPropNameInTable="NGÀY_BÁNColumn" msprop:Generator_UserColumnName="NGÀY_BÁN" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NHÂN_VIÊN_LẬP" msprop:Generator_ColumnVarNameInTable="columnNHÂN_VIÊN_LẬP" msprop:Generator_ColumnPropNameInRow="NHÂN_VIÊN_LẬP" msprop:Generator_ColumnPropNameInTable="NHÂN_VIÊN_LẬPColumn" msprop:Generator_UserColumnName="NHÂN_VIÊN_LẬP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TỔNG_TIỀN" msprop:Generator_ColumnVarNameInTable="columnTỔNG_TIỀN" msprop:Generator_ColumnPropNameInRow="TỔNG_TIỀN" msprop:Generator_ColumnPropNameInTable="TỔNG_TIỀNColumn" msprop:Generator_UserColumnName="TỔNG_TIỀN" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="IN_CTHD" msprop:Generator_TableClassName="IN_CTHDDataTable" msprop:Generator_TableVarName="tableIN_CTHD" msprop:Generator_RowChangedName="IN_CTHDRowChanged" msprop:Generator_TablePropName="IN_CTHD" msprop:Generator_RowDeletingName="IN_CTHDRowDeleting" msprop:Generator_RowChangingName="IN_CTHDRowChanging" msprop:Generator_RowEvHandlerName="IN_CTHDRowChangeEventHandler" msprop:Generator_RowDeletedName="IN_CTHDRowDeleted" msprop:Generator_RowClassName="IN_CTHDRow" msprop:Generator_UserTableName="IN_CTHD" msprop:Generator_RowEvArgName="IN_CTHDRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="maHD" msprop:Generator_ColumnVarNameInTable="columnmaHD" msprop:Generator_ColumnPropNameInRow="maHD" msprop:Generator_ColumnPropNameInTable="maHDColumn" msprop:Generator_UserColumnName="maHD">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TÊN_SÁCH" msprop:Generator_ColumnVarNameInTable="columnTÊN_SÁCH" msprop:Generator_ColumnPropNameInRow="TÊN_SÁCH" msprop:Generator_ColumnPropNameInTable="TÊN_SÁCHColumn" msprop:Generator_UserColumnName="TÊN_SÁCH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SỐ_LƯỢNG" msprop:Generator_ColumnVarNameInTable="columnSỐ_LƯỢNG" msprop:Generator_ColumnPropNameInRow="SỐ_LƯỢNG" msprop:Generator_ColumnPropNameInTable="SỐ_LƯỢNGColumn" msprop:Generator_UserColumnName="SỐ_LƯỢNG" type="xs:int" minOccurs="0" />
+              <xs:element name="GIÁ_BÁN" msprop:Generator_ColumnVarNameInTable="columnGIÁ_BÁN" msprop:Generator_ColumnPropNameInRow="GIÁ_BÁN" msprop:Generator_ColumnPropNameInTable="GIÁ_BÁNColumn" msprop:Generator_UserColumnName="GIÁ_BÁN" type="xs:int" minOccurs="0" />
+              <xs:element name="THÀNH_TIỀN" msprop:Generator_ColumnVarNameInTable="columnTHÀNH_TIỀN" msprop:Generator_ColumnPropNameInRow="THÀNH_TIỀN" msprop:Generator_ColumnPropNameInTable="THÀNH_TIỀNColumn" msprop:Generator_UserColumnName="THÀNH_TIỀN" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:IN_PN" />
+      <xs:field xpath="mstns:maPN" />
+    </xs:unique>
+    <xs:unique name="INCTPN_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:INCTPN" />
+      <xs:field xpath="mstns:maPN" />
+    </xs:unique>
+    <xs:unique name="IN_TKHD_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:IN_TKHD" />
+      <xs:field xpath="mstns:MÃ_HÓA_ĐƠN" />
+    </xs:unique>
+    <xs:unique name="IN_CTHD_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:IN_CTHD" />
+      <xs:field xpath="mstns:maHD" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

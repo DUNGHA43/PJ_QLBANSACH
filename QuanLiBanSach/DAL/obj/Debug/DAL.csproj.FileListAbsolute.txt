@@ -1,0 +1,9 @@
+C:\Users\DUNGHA\Documents\C#\QuanLiBanSach\DAL\bin\Debug\DAL.dll
+C:\Users\DUNGHA\Documents\C#\QuanLiBanSach\DAL\bin\Debug\DAL.pdb
+C:\Users\DUNGHA\Documents\C#\QuanLiBanSach\DAL\bin\Debug\DTO.dll
+C:\Users\DUNGHA\Documents\C#\QuanLiBanSach\DAL\bin\Debug\DTO.pdb
+C:\Users\DUNGHA\Documents\C#\QuanLiBanSach\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\DUNGHA\Documents\C#\QuanLiBanSach\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\DUNGHA\Documents\C#\QuanLiBanSach\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\DUNGHA\Documents\C#\QuanLiBanSach\DAL\obj\Debug\DAL.dll
+C:\Users\DUNGHA\Documents\C#\QuanLiBanSach\DAL\obj\Debug\DAL.pdb
