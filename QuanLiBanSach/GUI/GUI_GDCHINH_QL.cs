@@ -110,17 +110,16 @@ namespace GUI
 
         private void btnTKBan_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            openForm(typeof(GUI_TKBAN));
         }
-
-        private void btnTKDT_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
-        }
-
         private void btnTKNhap_ItemClick(object sender, ItemClickEventArgs e)
         {
+            openForm(typeof(GUI_TKNHAP));
+        }
 
+        private void btnTKSLT_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(GUI_TKSL));
         }
     }
 }

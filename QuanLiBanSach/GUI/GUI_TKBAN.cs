@@ -26,25 +26,32 @@ namespace GUI
 
         private void btnIN_Click(object sender, EventArgs e)
         {
-            if(rdoTKHD.Checked)
+            try
             {
-                RP_TKHD tkpn = new RP_TKHD();
-                tkpn.SetDataSource(bctk.inHD(cbxThang.Text.Trim(), cbxNam.Text.Trim()));
-                GUI_RP RP = new GUI_RP();
-                RP.cryRP.ReportSource = tkpn;
-                RP.ShowDialog();
+                if (rdoTKHD.Checked)
+                {
+                    RP_TKHD tkpn = new RP_TKHD();
+                    tkpn.SetDataSource(bctk.inHD(cbxThang.Text.Trim(), cbxNam.Text.Trim()));
+                    GUI_RP RP = new GUI_RP();
+                    RP.cryRP.ReportSource = tkpn;
+                    RP.ShowDialog();
+                }
+                else if (rdoTKCTHD.Checked)
+                {
+                    RP_TKCTHD tkpn = new RP_TKCTHD();
+                    tkpn.SetDataSource(bctk.inCTHD(cbxThang.Text.Trim(), cbxNam.Text.Trim()));
+                    GUI_RP RP = new GUI_RP();
+                    RP.cryRP.ReportSource = tkpn;
+                    RP.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn chức năng cần thống kê!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
-            else if(rdoTKCTHD.Checked)
+            catch
             {
-                RP_TKCTHD tkpn = new RP_TKCTHD();
-                tkpn.SetDataSource(bctk.inCTHD(cbxThang.Text.Trim(), cbxNam.Text.Trim()));
-                GUI_RP RP = new GUI_RP();
-                RP.cryRP.ReportSource = tkpn;
-                RP.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn chức năng cần thống kê!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Xuất báo cáo không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

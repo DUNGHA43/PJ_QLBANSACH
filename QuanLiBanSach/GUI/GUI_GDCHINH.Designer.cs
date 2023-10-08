@@ -44,7 +44,6 @@ namespace GUI
             this.btnQLTG = new DevExpress.XtraBars.BarButtonItem();
             this.btnTKNhap = new DevExpress.XtraBars.BarButtonItem();
             this.btnTKBan = new DevExpress.XtraBars.BarButtonItem();
-            this.btnTKDT = new DevExpress.XtraBars.BarButtonItem();
             this.rbPQLHT = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpPGQLND = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -57,6 +56,7 @@ namespace GUI
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.btnTKSLT = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -80,9 +80,9 @@ namespace GUI
             this.btnQLTG,
             this.btnTKNhap,
             this.btnTKBan,
-            this.btnTKDT});
+            this.btnTKSLT});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 16;
+            this.ribbonControl1.MaxItemId = 17;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbPQLHT,
@@ -215,16 +215,6 @@ namespace GUI
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btnTKBan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTKBan_ItemClick);
             // 
-            // btnTKDT
-            // 
-            this.btnTKDT.Caption = "THỐNG KÊ DOANH THU";
-            this.btnTKDT.Id = 15;
-            this.btnTKDT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTKDT.ImageOptions.Image")));
-            this.btnTKDT.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTKDT.ImageOptions.LargeImage")));
-            this.btnTKDT.Name = "btnTKDT";
-            this.btnTKDT.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            // 
             // rbPQLHT
             // 
             this.rbPQLHT.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -290,7 +280,7 @@ namespace GUI
             this.rbPTK_BC.AllowTextClipping = false;
             this.rbPTK_BC.ItemLinks.Add(this.btnTKNhap, true);
             this.rbPTK_BC.ItemLinks.Add(this.btnTKBan, true);
-            this.rbPTK_BC.ItemLinks.Add(this.btnTKDT, true);
+            this.rbPTK_BC.ItemLinks.Add(this.btnTKSLT, true);
             this.rbPTK_BC.Name = "rbPTK_BC";
             this.rbPTK_BC.Text = "THỐNG KÊ BÁO CÁO";
             // 
@@ -301,6 +291,16 @@ namespace GUI
             this.documentManager1.View = this.tabbedView1;
             this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView1});
+            // 
+            // btnTKSLT
+            // 
+            this.btnTKSLT.Caption = "THỐNG KÊ SỐ LƯỢNG TỒN";
+            this.btnTKSLT.Id = 16;
+            this.btnTKSLT.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
+            this.btnTKSLT.Name = "btnTKSLT";
+            this.btnTKSLT.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnTKSLT.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTKSLT_ItemClick);
             // 
             // GUI_GDCHINH
             // 
@@ -347,10 +347,10 @@ namespace GUI
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem btnTKNhap;
         private DevExpress.XtraBars.BarButtonItem btnTKBan;
-        private DevExpress.XtraBars.BarButtonItem btnTKDT;
         private DevExpress.XtraBars.Docking2010.DocumentManager documentManager1;
         private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
         private System.Drawing.Printing.PrintDocument printDocument1;
+        private DevExpress.XtraBars.BarButtonItem btnTKSLT;
     }
 }
 

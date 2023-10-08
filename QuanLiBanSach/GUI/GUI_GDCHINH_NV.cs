@@ -85,12 +85,12 @@ namespace GUI
 
         private void btnTKBan_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            openForm(typeof(GUI_TKBAN));
         }
 
-        private void btnTKDoanhThu_ItemClick(object sender, ItemClickEventArgs e)
+        private void btnTKSLT_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            openForm(typeof(GUI_TKSL));
         }
     }
 }

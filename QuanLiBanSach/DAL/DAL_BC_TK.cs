@@ -19,6 +19,8 @@ namespace DAL
         DataTable dtshowCTHD = new DataTable();
         DataTable dtInHD = new DataTable();
         DataTable dtInCTHD = new DataTable();
+        DataTable dtShowTKSL = new DataTable();
+        DataTable dtInTKSL = new DataTable();
         public DataTable inCTPN(string thang, string nam, string nxb)
         {
             connect_DB();
@@ -93,8 +95,6 @@ namespace DAL
             Close_DB();
             return nxb;
         }
-
-
         public DataTable showDSHD()
         {
             connect_DB();
@@ -149,6 +149,49 @@ namespace DAL
             adt.Fill(dtInCTHD);
             Close_DB();
             return dtInCTHD;
+        }
+
+        public DataTable LoadTenTG()
+        {
+            var tg = new DataTable();
+            connect_DB();
+            cmd = sqlcon.CreateCommand();
+            cmd.CommandText = $@"SELECT tenTG FROM TblTacGia";
+            adt.SelectCommand = cmd;
+            tg.Clear();
+            adt.Fill(tg);
+            Close_DB();
+            return tg;
+        }
+
+        public DataTable inTKSL(string tenNXB, string tenTG)
+        {
+            connect_DB();
+            cmd = sqlcon.CreateCommand();
+            cmd.CommandText = $@"SELECT TblSach.tenSach, TblSach.soLuongTon, TblSach.giaNhap, TblSach.giaBan, TblNhaXuatBan.tenNXB, TblTacGia.tenTG
+                                FROM TblSach 
+                                INNER JOIN TblNhaXuatBan ON TblSach.maNXB = TblNhaXuatBan.maNXB 
+                                INNER JOIN TblTacGia ON TblSach.maTG = TblTacGia.maTG
+                                WHERE tenNXB LIKE N'%{tenNXB}%' AND tenTG LIKE N'%{tenTG}%'";
+            adt.SelectCommand = cmd;
+            dtInTKSL.Clear();
+            adt.Fill(dtInTKSL);
+            Close_DB();
+            return dtInTKSL;
+        }
+        public DataTable showDSS()
+        {
+            connect_DB();
+            cmd = sqlcon.CreateCommand();
+            cmd.CommandText = $@"SELECT TblSach.tenSach AS TÊN_SÁCH, TblSach.soLuongTon AS SỐ_LƯỢNG_TỒN, TblSach.giaNhap AS GIÁ_NHẬP, TblSach.giaBan AS GIÁ_BÁN, TblNhaXuatBan.tenNXB AS TÊN_NXB, TblTacGia.tenTG AS TÊN_TG
+                                    FROM TblSach
+                                    INNER JOIN TblNhaXuatBan ON TblSach.maNXB = TblNhaXuatBan.maNXB
+                                    INNER JOIN TblTacGia ON TblSach.maTG = TblTacGia.maTG";
+            adt.SelectCommand = cmd;
+            dtShowTKSL.Clear();
+            adt.Fill(dtShowTKSL);
+            Close_DB();
+            return dtShowTKSL;
         }
     }
 }

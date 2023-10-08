@@ -77,6 +77,9 @@ namespace GUI
             {
                 txtGiaBan.ReadOnly = true;
                 txtGiaNhap.ReadOnly = true;
+                btnThem.Enabled = false;
+                btnSua.Enabled = false;
+                btnXoa.Enabled = false;
             }    
             else if (kt == "Nhân viên".Trim())
             {
@@ -201,17 +204,17 @@ namespace GUI
 
         private void cbxNXB_TextChanged(object sender, EventArgs e)
         {
-            maNXB = qls.loadMaNXB(cbxNXB.Text.Trim());
+                maNXB = qls.loadMaNXB(cbxNXB.Text.Trim());
         }
 
         private void cbxTG_TextChanged(object sender, EventArgs e)
         {
-            maTG = qls.loadMaTG(cbxTG.Text.Trim());
+                maTG = qls.loadMaTG(cbxTG.Text.Trim());
         }
 
         private void cbxTL_TextChanged(object sender, EventArgs e)
         {
-            maTL = qls.loadMaTL(cbxTL.Text.Trim());
+                maTL = qls.loadMaTL(cbxTL.Text.Trim());
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

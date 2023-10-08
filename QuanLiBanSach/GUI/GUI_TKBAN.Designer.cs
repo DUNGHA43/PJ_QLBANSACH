@@ -31,7 +31,6 @@ namespace GUI
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvCTHD = new System.Windows.Forms.DataGridView();
             this.dgvDSHD = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -46,11 +45,12 @@ namespace GUI
             this.cbxNam = new System.Windows.Forms.ComboBox();
             this.cbxThang = new System.Windows.Forms.ComboBox();
             this.txtMaHD = new System.Windows.Forms.TextBox();
+            this.dgvCTHD = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCTHD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSHD)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCTHD)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -73,19 +73,6 @@ namespace GUI
             this.panel1.Size = new System.Drawing.Size(749, 48);
             this.panel1.TabIndex = 1;
             // 
-            // dgvCTHD
-            // 
-            this.dgvCTHD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvCTHD.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvCTHD.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvCTHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCTHD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCTHD.Location = new System.Drawing.Point(450, 0);
-            this.dgvCTHD.Name = "dgvCTHD";
-            this.dgvCTHD.ReadOnly = true;
-            this.dgvCTHD.Size = new System.Drawing.Size(299, 308);
-            this.dgvCTHD.TabIndex = 2;
-            // 
             // dgvDSHD
             // 
             this.dgvDSHD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
@@ -97,7 +84,7 @@ namespace GUI
             this.dgvDSHD.Location = new System.Drawing.Point(0, 0);
             this.dgvDSHD.Name = "dgvDSHD";
             this.dgvDSHD.ReadOnly = true;
-            this.dgvDSHD.Size = new System.Drawing.Size(450, 308);
+            this.dgvDSHD.Size = new System.Drawing.Size(433, 308);
             this.dgvDSHD.TabIndex = 0;
             this.dgvDSHD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSHD_CellContentClick);
             // 
@@ -267,6 +254,19 @@ namespace GUI
             this.txtMaHD.TabIndex = 8;
             this.txtMaHD.TextChanged += new System.EventHandler(this.txtMaHD_TextChanged);
             // 
+            // dgvCTHD
+            // 
+            this.dgvCTHD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvCTHD.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvCTHD.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvCTHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCTHD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCTHD.Location = new System.Drawing.Point(433, 0);
+            this.dgvCTHD.Name = "dgvCTHD";
+            this.dgvCTHD.ReadOnly = true;
+            this.dgvCTHD.Size = new System.Drawing.Size(316, 308);
+            this.dgvCTHD.TabIndex = 3;
+            // 
             // GUI_TKBAN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,11 +281,11 @@ namespace GUI
             this.Load += new System.EventHandler(this.GUI_TKBAN_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCTHD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSHD)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCTHD)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -294,7 +294,6 @@ namespace GUI
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dgvCTHD;
         private System.Windows.Forms.DataGridView dgvDSHD;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
@@ -309,5 +308,6 @@ namespace GUI
         private System.Windows.Forms.ComboBox cbxThang;
         private System.Windows.Forms.Button btnIN;
         private System.Windows.Forms.TextBox txtMaHD;
+        private System.Windows.Forms.DataGridView dgvCTHD;
     }
 }

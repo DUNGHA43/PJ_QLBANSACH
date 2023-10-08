@@ -94,3 +94,4 @@ C:\Users\DUNGHA\Documents\C#\QuanLiBanSach\GUI\obj\Debug\GUI.GUI_RP.resources
 C:\Users\DUNGHA\Documents\C#\QuanLiBanSach\GUI\obj\Debug\GUI.GUI_GDCHINH_NV.resources
 C:\Users\DUNGHA\Documents\C#\QuanLiBanSach\GUI\obj\Debug\GUI.GUI_TKNHAP.resources
 C:\Users\DUNGHA\Documents\C#\QuanLiBanSach\GUI\obj\Debug\GUI.GUI_TKBAN.resources
+C:\Users\DUNGHA\Documents\C#\QuanLiBanSach\GUI\obj\Debug\GUI.GUI_TKSL.resources

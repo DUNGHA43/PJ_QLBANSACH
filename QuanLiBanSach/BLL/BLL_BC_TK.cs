@@ -47,5 +47,18 @@ namespace BLL
         {
             return bctk.inCTHD(thang, nam);
         }
+        public DataTable LoadTenTG()
+        {
+            return bctk.LoadTenTG();
+        }
+
+        public DataTable inTKSL(string tenNXB, string tenTG)
+        {
+            return bctk.inTKSL(tenNXB, tenTG);
+        }
+        public DataTable showDSS()
+        {
+            return bctk.showDSS();
+        }
     }
 }

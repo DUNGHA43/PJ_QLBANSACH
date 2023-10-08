@@ -43,7 +43,7 @@ namespace GUI
             this.btnQLNXB = new DevExpress.XtraBars.BarButtonItem();
             this.btnQLTL = new DevExpress.XtraBars.BarButtonItem();
             this.btnQLTG = new DevExpress.XtraBars.BarButtonItem();
-            this.btnTKDT = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTKSLT = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -77,9 +77,9 @@ namespace GUI
             this.btnQLNXB,
             this.btnQLTL,
             this.btnQLTG,
-            this.btnTKDT});
+            this.btnTKSLT});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 13;
+            this.ribbon.MaxItemId = 14;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -198,15 +198,13 @@ namespace GUI
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btnQLTG.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQLTG_ItemClick);
             // 
-            // btnTKDT
+            // btnTKSLT
             // 
-            this.btnTKDT.Caption = "THỐNG KÊ DOANH THU";
-            this.btnTKDT.Id = 12;
-            this.btnTKDT.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTKDT.ImageOptions.SvgImage")));
-            this.btnTKDT.Name = "btnTKDT";
-            this.btnTKDT.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.btnTKDT.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTKDT_ItemClick);
+            this.btnTKSLT.Caption = "THỐNG KÊ SỐ LƯỢNG TỒN";
+            this.btnTKSLT.Id = 13;
+            this.btnTKSLT.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTKSLT.ImageOptions.SvgImage")));
+            this.btnTKSLT.Name = "btnTKSLT";
+            this.btnTKSLT.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTKSLT_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -273,7 +271,7 @@ namespace GUI
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.btnTKNhap, true);
             this.ribbonPageGroup4.ItemLinks.Add(this.btnTKBan, true);
-            this.ribbonPageGroup4.ItemLinks.Add(this.btnTKDT, true);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnTKSLT, true);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "THỐNG KÊ BÁO CÁO";
             // 
@@ -328,8 +326,8 @@ namespace GUI
         private DevExpress.XtraBars.BarButtonItem btnQLTL;
         private DevExpress.XtraBars.BarButtonItem btnQLTG;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
-        private DevExpress.XtraBars.BarButtonItem btnTKDT;
         private DevExpress.XtraBars.Docking2010.DocumentManager documentManager1;
         private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
+        private DevExpress.XtraBars.BarButtonItem btnTKSLT;
     }
 }

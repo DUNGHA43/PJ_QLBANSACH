@@ -169,6 +169,12 @@
     <Compile Include="GUI_TKNHAP.Designer.cs">
       <DependentUpon>GUI_TKNHAP.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_TKSL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_TKSL.Designer.cs">
+      <DependentUpon>GUI_TKSL.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QUẢN LÝ NGƯỜI DÙNG.cs">
@@ -205,6 +211,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RP_TKHD.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RP_TKSL.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RP_TKSL.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="GUI_CTHOADON.resx">
@@ -258,6 +270,9 @@
     <EmbeddedResource Include="GUI_TKNHAP.resx">
       <DependentUpon>GUI_TKNHAP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI_TKSL.resx">
+      <DependentUpon>GUI_TKSL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -291,6 +306,10 @@
     <EmbeddedResource Include="RP_TKHD.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RP_TKHD.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RP_TKSL.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RP_TKSL.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Data.xsc">

@@ -120,5 +120,10 @@ namespace GUI
         {
             openForm(typeof(GUI_TKBAN));
         }
+
+        private void btnTKSLT_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(typeof(GUI_TKSL));
+        }
     }
 }

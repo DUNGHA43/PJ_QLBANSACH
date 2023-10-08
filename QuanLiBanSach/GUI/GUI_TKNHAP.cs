@@ -29,25 +29,32 @@ namespace GUI
         }
         private void btnIN_Click(object sender, EventArgs e)
         {
-            if(rdoTKPN.Checked)
+            try
             {
-                RP_IN_TKPN tkpn = new RP_IN_TKPN();
-                tkpn.SetDataSource(bctk.inPN(cbxThang.Text.Trim(), cbxNam.Text.Trim(), cbxNXB.Text.Trim()));
-                GUI_RP RP = new GUI_RP();
-                RP.cryRP.ReportSource = tkpn;
-                RP.ShowDialog();
-            }    
-            else if(rdoTKCTPN.Checked)
-            {
-                RP_INCTPN tkpn = new RP_INCTPN();
-                tkpn.SetDataSource(bctk.inCTPN(cbxThang.Text.Trim(), cbxNam.Text.Trim(), cbxNXB.Text.Trim()));
-                GUI_RP RP = new GUI_RP();
-                RP.cryRP.ReportSource = tkpn;
-                RP.ShowDialog();
+                if (rdoTKPN.Checked)
+                {
+                    RP_IN_TKPN tkpn = new RP_IN_TKPN();
+                    tkpn.SetDataSource(bctk.inPN(cbxThang.Text.Trim(), cbxNam.Text.Trim(), cbxNXB.Text.Trim()));
+                    GUI_RP RP = new GUI_RP();
+                    RP.cryRP.ReportSource = tkpn;
+                    RP.ShowDialog();
+                }
+                else if (rdoTKCTPN.Checked)
+                {
+                    RP_INCTPN tkpn = new RP_INCTPN();
+                    tkpn.SetDataSource(bctk.inCTPN(cbxThang.Text.Trim(), cbxNam.Text.Trim(), cbxNXB.Text.Trim()));
+                    GUI_RP RP = new GUI_RP();
+                    RP.cryRP.ReportSource = tkpn;
+                    RP.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng tích vào mục muốn thống kê", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
-            else
+            catch
             {
-                MessageBox.Show("Vui lòng tích vào mục muốn thống kê", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Xuất báo cáo không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

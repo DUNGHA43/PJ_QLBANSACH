@@ -125,6 +125,30 @@ GROUP BY TblHoaDon.maHD, TblSach.tenSach, TblSach.giaBan</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="IN_TKSLTTableAdapter" GeneratorDataComponentClassName="IN_TKSLTTableAdapter" Name="IN_TKSLT" UserDataComponentName="IN_TKSLTTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QL_BANSACHConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TblSach.tenSach, TblSach.soLuongTon, TblSach.giaNhap, TblSach.giaBan, TblNhaXuatBan.tenNXB, TblTacGia.tenTG
+FROM            TblSach INNER JOIN
+                         TblNhaXuatBan ON TblSach.maNXB = TblNhaXuatBan.maNXB INNER JOIN
+                         TblTacGia ON TblSach.maTG = TblTacGia.maTG</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="tenSach" DataSetColumn="tenSach" />
+              <Mapping SourceColumn="soLuongTon" DataSetColumn="soLuongTon" />
+              <Mapping SourceColumn="giaNhap" DataSetColumn="giaNhap" />
+              <Mapping SourceColumn="giaBan" DataSetColumn="giaBan" />
+              <Mapping SourceColumn="tenNXB" DataSetColumn="tenNXB" />
+              <Mapping SourceColumn="tenTG" DataSetColumn="tenTG" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -133,7 +157,7 @@ GROUP BY TblHoaDon.maHD, TblSach.tenSach, TblSach.giaBan</CommandText>
   <xs:element name="Data" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Data" msprop:Generator_UserDSName="Data">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="IN_HD" msprop:Generator_TableClassName="IN_HDDataTable" msprop:Generator_TableVarName="tableIN_HD" msprop:Generator_TablePropName="IN_HD" msprop:Generator_RowDeletingName="IN_HDRowDeleting" msprop:Generator_RowChangingName="IN_HDRowChanging" msprop:Generator_RowEvHandlerName="IN_HDRowChangeEventHandler" msprop:Generator_RowDeletedName="IN_HDRowDeleted" msprop:Generator_UserTableName="IN_HD" msprop:Generator_RowChangedName="IN_HDRowChanged" msprop:Generator_RowEvArgName="IN_HDRowChangeEvent" msprop:Generator_RowClassName="IN_HDRow">
+        <xs:element name="IN_HD" msprop:Generator_TableClassName="IN_HDDataTable" msprop:Generator_TableVarName="tableIN_HD" msprop:Generator_RowChangedName="IN_HDRowChanged" msprop:Generator_TablePropName="IN_HD" msprop:Generator_RowDeletingName="IN_HDRowDeleting" msprop:Generator_RowChangingName="IN_HDRowChanging" msprop:Generator_RowEvHandlerName="IN_HDRowChangeEventHandler" msprop:Generator_RowDeletedName="IN_HDRowDeleted" msprop:Generator_RowClassName="IN_HDRow" msprop:Generator_UserTableName="IN_HD" msprop:Generator_RowEvArgName="IN_HDRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="tenSach" msprop:Generator_ColumnVarNameInTable="columntenSach" msprop:Generator_ColumnPropNameInRow="tenSach" msprop:Generator_ColumnPropNameInTable="tenSachColumn" msprop:Generator_UserColumnName="tenSach" minOccurs="0">
@@ -149,7 +173,7 @@ GROUP BY TblHoaDon.maHD, TblSach.tenSach, TblSach.giaBan</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="IN_PN" msprop:Generator_TableClassName="IN_PNDataTable" msprop:Generator_TableVarName="tableIN_PN" msprop:Generator_TablePropName="IN_PN" msprop:Generator_RowDeletingName="IN_PNRowDeleting" msprop:Generator_RowChangingName="IN_PNRowChanging" msprop:Generator_RowEvHandlerName="IN_PNRowChangeEventHandler" msprop:Generator_RowDeletedName="IN_PNRowDeleted" msprop:Generator_UserTableName="IN_PN" msprop:Generator_RowChangedName="IN_PNRowChanged" msprop:Generator_RowEvArgName="IN_PNRowChangeEvent" msprop:Generator_RowClassName="IN_PNRow">
+        <xs:element name="IN_PN" msprop:Generator_TableClassName="IN_PNDataTable" msprop:Generator_TableVarName="tableIN_PN" msprop:Generator_RowChangedName="IN_PNRowChanged" msprop:Generator_TablePropName="IN_PN" msprop:Generator_RowDeletingName="IN_PNRowDeleting" msprop:Generator_RowChangingName="IN_PNRowChanging" msprop:Generator_RowEvHandlerName="IN_PNRowChangeEventHandler" msprop:Generator_RowDeletedName="IN_PNRowDeleted" msprop:Generator_RowClassName="IN_PNRow" msprop:Generator_UserTableName="IN_PN" msprop:Generator_RowEvArgName="IN_PNRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="maPN" msprop:Generator_ColumnVarNameInTable="columnmaPN" msprop:Generator_ColumnPropNameInRow="maPN" msprop:Generator_ColumnPropNameInTable="maPNColumn" msprop:Generator_UserColumnName="maPN">
@@ -178,7 +202,7 @@ GROUP BY TblHoaDon.maHD, TblSach.tenSach, TblSach.giaBan</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="INCTPN" msprop:Generator_TableClassName="INCTPNDataTable" msprop:Generator_TableVarName="tableINCTPN" msprop:Generator_TablePropName="INCTPN" msprop:Generator_RowDeletingName="INCTPNRowDeleting" msprop:Generator_RowChangingName="INCTPNRowChanging" msprop:Generator_RowEvHandlerName="INCTPNRowChangeEventHandler" msprop:Generator_RowDeletedName="INCTPNRowDeleted" msprop:Generator_UserTableName="INCTPN" msprop:Generator_RowChangedName="INCTPNRowChanged" msprop:Generator_RowEvArgName="INCTPNRowChangeEvent" msprop:Generator_RowClassName="INCTPNRow">
+        <xs:element name="INCTPN" msprop:Generator_TableClassName="INCTPNDataTable" msprop:Generator_TableVarName="tableINCTPN" msprop:Generator_RowChangedName="INCTPNRowChanged" msprop:Generator_TablePropName="INCTPN" msprop:Generator_RowDeletingName="INCTPNRowDeleting" msprop:Generator_RowChangingName="INCTPNRowChanging" msprop:Generator_RowEvHandlerName="INCTPNRowChangeEventHandler" msprop:Generator_RowDeletedName="INCTPNRowDeleted" msprop:Generator_RowClassName="INCTPNRow" msprop:Generator_UserTableName="INCTPN" msprop:Generator_RowEvArgName="INCTPNRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="maPN" msprop:Generator_ColumnVarNameInTable="columnmaPN" msprop:Generator_ColumnPropNameInRow="maPN" msprop:Generator_ColumnPropNameInTable="maPNColumn" msprop:Generator_UserColumnName="maPN">
@@ -209,7 +233,7 @@ GROUP BY TblHoaDon.maHD, TblSach.tenSach, TblSach.giaBan</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="IN_TKHD" msprop:Generator_TableClassName="IN_TKHDDataTable" msprop:Generator_TableVarName="tableIN_TKHD" msprop:Generator_RowChangedName="IN_TKHDRowChanged" msprop:Generator_TablePropName="IN_TKHD" msprop:Generator_RowDeletingName="IN_TKHDRowDeleting" msprop:Generator_RowChangingName="IN_TKHDRowChanging" msprop:Generator_RowEvHandlerName="IN_TKHDRowChangeEventHandler" msprop:Generator_RowDeletedName="IN_TKHDRowDeleted" msprop:Generator_RowClassName="IN_TKHDRow" msprop:Generator_UserTableName="IN_TKHD" msprop:Generator_RowEvArgName="IN_TKHDRowChangeEvent">
+        <xs:element name="IN_TKHD" msprop:Generator_TableClassName="IN_TKHDDataTable" msprop:Generator_TableVarName="tableIN_TKHD" msprop:Generator_TablePropName="IN_TKHD" msprop:Generator_RowDeletingName="IN_TKHDRowDeleting" msprop:Generator_RowChangingName="IN_TKHDRowChanging" msprop:Generator_RowEvHandlerName="IN_TKHDRowChangeEventHandler" msprop:Generator_RowDeletedName="IN_TKHDRowDeleted" msprop:Generator_UserTableName="IN_TKHD" msprop:Generator_RowChangedName="IN_TKHDRowChanged" msprop:Generator_RowEvArgName="IN_TKHDRowChangeEvent" msprop:Generator_RowClassName="IN_TKHDRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MÃ_HÓA_ĐƠN" msprop:Generator_ColumnVarNameInTable="columnMÃ_HÓA_ĐƠN" msprop:Generator_ColumnPropNameInRow="MÃ_HÓA_ĐƠN" msprop:Generator_ColumnPropNameInTable="MÃ_HÓA_ĐƠNColumn" msprop:Generator_UserColumnName="MÃ_HÓA_ĐƠN">
@@ -231,7 +255,7 @@ GROUP BY TblHoaDon.maHD, TblSach.tenSach, TblSach.giaBan</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="IN_CTHD" msprop:Generator_TableClassName="IN_CTHDDataTable" msprop:Generator_TableVarName="tableIN_CTHD" msprop:Generator_RowChangedName="IN_CTHDRowChanged" msprop:Generator_TablePropName="IN_CTHD" msprop:Generator_RowDeletingName="IN_CTHDRowDeleting" msprop:Generator_RowChangingName="IN_CTHDRowChanging" msprop:Generator_RowEvHandlerName="IN_CTHDRowChangeEventHandler" msprop:Generator_RowDeletedName="IN_CTHDRowDeleted" msprop:Generator_RowClassName="IN_CTHDRow" msprop:Generator_UserTableName="IN_CTHD" msprop:Generator_RowEvArgName="IN_CTHDRowChangeEvent">
+        <xs:element name="IN_CTHD" msprop:Generator_TableClassName="IN_CTHDDataTable" msprop:Generator_TableVarName="tableIN_CTHD" msprop:Generator_TablePropName="IN_CTHD" msprop:Generator_RowDeletingName="IN_CTHDRowDeleting" msprop:Generator_RowChangingName="IN_CTHDRowChanging" msprop:Generator_RowEvHandlerName="IN_CTHDRowChangeEventHandler" msprop:Generator_RowDeletedName="IN_CTHDRowDeleted" msprop:Generator_UserTableName="IN_CTHD" msprop:Generator_RowChangedName="IN_CTHDRowChanged" msprop:Generator_RowEvArgName="IN_CTHDRowChangeEvent" msprop:Generator_RowClassName="IN_CTHDRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="maHD" msprop:Generator_ColumnVarNameInTable="columnmaHD" msprop:Generator_ColumnPropNameInRow="maHD" msprop:Generator_ColumnPropNameInTable="maHDColumn" msprop:Generator_UserColumnName="maHD">
@@ -251,6 +275,36 @@ GROUP BY TblHoaDon.maHD, TblSach.tenSach, TblSach.giaBan</CommandText>
               <xs:element name="SỐ_LƯỢNG" msprop:Generator_ColumnVarNameInTable="columnSỐ_LƯỢNG" msprop:Generator_ColumnPropNameInRow="SỐ_LƯỢNG" msprop:Generator_ColumnPropNameInTable="SỐ_LƯỢNGColumn" msprop:Generator_UserColumnName="SỐ_LƯỢNG" type="xs:int" minOccurs="0" />
               <xs:element name="GIÁ_BÁN" msprop:Generator_ColumnVarNameInTable="columnGIÁ_BÁN" msprop:Generator_ColumnPropNameInRow="GIÁ_BÁN" msprop:Generator_ColumnPropNameInTable="GIÁ_BÁNColumn" msprop:Generator_UserColumnName="GIÁ_BÁN" type="xs:int" minOccurs="0" />
               <xs:element name="THÀNH_TIỀN" msprop:Generator_ColumnVarNameInTable="columnTHÀNH_TIỀN" msprop:Generator_ColumnPropNameInRow="THÀNH_TIỀN" msprop:Generator_ColumnPropNameInTable="THÀNH_TIỀNColumn" msprop:Generator_UserColumnName="THÀNH_TIỀN" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="IN_TKSLT" msprop:Generator_TableClassName="IN_TKSLTDataTable" msprop:Generator_TableVarName="tableIN_TKSLT" msprop:Generator_TablePropName="IN_TKSLT" msprop:Generator_RowDeletingName="IN_TKSLTRowDeleting" msprop:Generator_RowChangingName="IN_TKSLTRowChanging" msprop:Generator_RowEvHandlerName="IN_TKSLTRowChangeEventHandler" msprop:Generator_RowDeletedName="IN_TKSLTRowDeleted" msprop:Generator_UserTableName="IN_TKSLT" msprop:Generator_RowChangedName="IN_TKSLTRowChanged" msprop:Generator_RowEvArgName="IN_TKSLTRowChangeEvent" msprop:Generator_RowClassName="IN_TKSLTRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="tenSach" msprop:Generator_ColumnVarNameInTable="columntenSach" msprop:Generator_ColumnPropNameInRow="tenSach" msprop:Generator_ColumnPropNameInTable="tenSachColumn" msprop:Generator_UserColumnName="tenSach" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="soLuongTon" msprop:Generator_ColumnVarNameInTable="columnsoLuongTon" msprop:Generator_ColumnPropNameInRow="soLuongTon" msprop:Generator_ColumnPropNameInTable="soLuongTonColumn" msprop:Generator_UserColumnName="soLuongTon" type="xs:int" minOccurs="0" />
+              <xs:element name="giaNhap" msprop:Generator_ColumnVarNameInTable="columngiaNhap" msprop:Generator_ColumnPropNameInRow="giaNhap" msprop:Generator_ColumnPropNameInTable="giaNhapColumn" msprop:Generator_UserColumnName="giaNhap" type="xs:int" minOccurs="0" />
+              <xs:element name="giaBan" msprop:Generator_ColumnVarNameInTable="columngiaBan" msprop:Generator_ColumnPropNameInRow="giaBan" msprop:Generator_ColumnPropNameInTable="giaBanColumn" msprop:Generator_UserColumnName="giaBan" type="xs:int" minOccurs="0" />
+              <xs:element name="tenNXB" msprop:Generator_ColumnVarNameInTable="columntenNXB" msprop:Generator_ColumnPropNameInRow="tenNXB" msprop:Generator_ColumnPropNameInTable="tenNXBColumn" msprop:Generator_UserColumnName="tenNXB" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tenTG" msprop:Generator_ColumnVarNameInTable="columntenTG" msprop:Generator_ColumnPropNameInRow="tenTG" msprop:Generator_ColumnPropNameInTable="tenTGColumn" msprop:Generator_UserColumnName="tenTG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

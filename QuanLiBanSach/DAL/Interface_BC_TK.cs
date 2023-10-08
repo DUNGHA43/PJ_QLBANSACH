@@ -13,10 +13,12 @@ namespace DAL
         DataTable inPN(string thang, string nam, string nxb);
         DataTable inCTPN(string thang, string nam, string nxb);
         DataTable LoadTenNXB();
-
+        DataTable LoadTenTG();
         DataTable showDSHD();
         DataTable showCTDSHD(string maPN);
         DataTable inHD(string thang, string nam);
         DataTable inCTHD(string thang, string nam);
+        DataTable showDSS();
+        DataTable inTKSL(string tenNXB, string tenTG);
     }
 }
